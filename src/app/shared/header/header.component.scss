@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  background-color: rgba(39,36,36,0.74);
+  padding: 3px 10px;
+  border-bottom: 1px rgba(64,61,61,0.95) solid;
+  .navbar{
+      display: flex;
+    &-links {
+      display: flex;
+      justify-content: space-around;
+      list-style: none;
+      text-decoration: none;
+      li{
+        margin: 0 8px;
+        display: flex;
+        align-items: center;
+        a{
+          color: #ffda02;
+        }
+      }
+    }
+
+    &-logo {
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
