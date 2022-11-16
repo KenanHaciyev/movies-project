@@ -1,0 +1,13 @@
+.movies {
+  padding: 10px;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    &-column {
+      border-radius: 4px;
+      margin: 4px 10px;
+    }
+  }
+}

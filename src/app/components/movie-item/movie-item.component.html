@@ -1,10 +1,10 @@
-<a class="movie-item" >
-  <div class="movie-item-rating">
+<a class="movie-item" [class.bigPostsForMovies]="big" >
+  <div class="movie-item-rating" >
     <div class="my-icon">Star</div>
-    <span>{{itemData.vote_average}}</span><span>/10</span>
+    <span>{{itemData.vote_average === 0? 6.8 : itemData.vote_average}}</span><span>/10</span>
   </div>
-  <div class="movie-item-image">
-    <img src="https://image.tmdb.org/t/p/w342{{itemData.poster_path}}" alt="#">
+  <div class="movie-item-image" >
+    <img  src="https://image.tmdb.org/t/p/w342{{itemData.poster_path}}" alt="#">
   </div>
-  <div class="movie-item-title">{{itemData.title}}</div>
+  <div  [class.bigTitle]="big" class="movie-item-title">{{itemData.title}}</div>
 </a>

@@ -1,8 +1,8 @@
 .movie-item {
   display: block;
   position: relative;
-  max-height: 13rem;
-  max-width: 12rem;
+  height: 15.5rem;
+  width: 12rem;
   padding: 5px 0 0;
   border: 1px #434040 solid;
   border-radius: 4px;
@@ -23,8 +23,8 @@
   }
 
   &-image {
-    height: 10rem;
-    width: 12rem;
+    height: 82%;
+    width: 100%;
 
     img {
       height: 100%;
@@ -36,10 +36,23 @@
   }
 
   &-title {
-    padding: 2px 8px;
+    padding: 3px 8px;
     border-radius: 4px;
     height: 35px;
     display: flex;
     align-items: center;
   }
 }
+
+.bigPostsForMovies {
+  height: 20rem;
+  width: 17rem;
+}
+
+.bigTitle{
+  margin-top: 7px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+

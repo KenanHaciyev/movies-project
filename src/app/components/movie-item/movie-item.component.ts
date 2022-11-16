@@ -9,7 +9,8 @@ import {Movie} from "../../interfaces";
 export class MovieItemComponent implements OnInit {
 
   @Input() itemData : Movie = null!
-  constructor() { }
+  @Input() big:boolean = false
+  constructor() {}
 
   ngOnInit(): void {
   }

@@ -14,4 +14,8 @@ export class MoviesService {
   getData(type: string = 'popular') {
     return this.http.get(`https://api.themoviedb.org/3/movie/${type}?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
+
+  getDataByPage(page: number) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/popular?page=${page}&api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
 }
