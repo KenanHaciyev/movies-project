@@ -8,7 +8,9 @@ import {MoviesService} from "../../services/movies.service";
 })
 export class MainComponent implements OnInit {
 
-  movies: any = []
+  popularMovies: any = []
+  topRatedMovies: any = []
+  upcomingMovies: any = []
 
   constructor(
     private moviesServ: MoviesService
@@ -16,7 +18,17 @@ export class MainComponent implements OnInit {
 
   ngOnInit(): void {
     this.moviesServ.getData().subscribe((res:any) => {
-        this.movies = res.results
+        this.popularMovies = res.results
+    })
+
+    this.moviesServ.getData("top_rated").subscribe((res:any) => {
+      this.topRatedMovies = res.results
+    })
+
+    this.moviesServ.getData("upcoming").subscribe((res:any) => {
+      this.upcomingMovies = res.results
     })
   }
+
+
 }

@@ -8,6 +8,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { MainComponent } from './pages/main/main.component';
 import { MoviesComponent } from './pages/movies/movies.component';
 import {HttpClientModule} from "@angular/common/http";
+import { PromoComponent } from './components/promo/promo.component';
+import { ItemsComponent } from './components/items/items.component';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +19,9 @@ import {HttpClientModule} from "@angular/common/http";
     FooterComponent,
     MainComponent,
     MoviesComponent,
+    PromoComponent,
+    ItemsComponent,
+    MovieItemComponent,
   ],
   imports: [
     BrowserModule,
