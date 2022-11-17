@@ -1,7 +1,9 @@
+<app-header></app-header>
 <div class="movies">
   <div class="movies-wrapper">
     <div class="movies-wrapper-column" *ngFor="let movie of allMovies">
       <app-movie-item [big]="true" [itemData]="movie"></app-movie-item>
     </div>
   </div>
+  <p-paginator [rows]="20" [totalRecords]="10000" (onPageChange)="paginate($event)" ></p-paginator>
 </div>

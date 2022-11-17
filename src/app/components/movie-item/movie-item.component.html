@@ -1,4 +1,4 @@
-<a class="movie-item" [class.bigPostsForMovies]="big" >
+<a class="movie-item" [class.bigPostsForMovies]="big" [routerLink]="'/movieInfo/' + itemData.id" >
   <div class="movie-item-rating" >
     <div class="my-icon">Star</div>
     <span>{{itemData.vote_average === 0? 6.8 : itemData.vote_average}}</span><span>/10</span>

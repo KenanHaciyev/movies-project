@@ -3,7 +3,7 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  background-color: rgba(39,36,36,0.74);
+  background-color: rgba(39,36,36,0.2);
   padding: 3px 10px;
   border-bottom: 1px rgba(64,61,61,0.95) solid;
   .navbar{
@@ -17,8 +17,9 @@ header {
         margin: 0 8px;
         display: flex;
         align-items: center;
+        font-size: 17px;
         a{
-          color: #ffda02;
+          color: rgba(194,210,255,0.95);
         }
       }
     }

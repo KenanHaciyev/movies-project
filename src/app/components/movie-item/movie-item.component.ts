@@ -14,5 +14,4 @@ export class MovieItemComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }

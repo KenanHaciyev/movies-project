@@ -15,9 +15,17 @@ export class MoviesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.moviesServ.getDataByPage(3).subscribe((res:any) => {
+    this.getMoviesByPages(1)
+  }
+
+  getMoviesByPages(page: number) {
+    this.moviesServ.getDataByPage(page).subscribe((res:any) => {
       this.allMovies = res.results
     })
+  }
+
+  paginate(event: any) {
+    this.getMoviesByPages(event.page + 1)
   }
 
 }
