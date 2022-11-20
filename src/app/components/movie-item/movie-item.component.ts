@@ -7,8 +7,8 @@ import {Movie} from "../../interfaces";
   styleUrls: ['./movie-item.component.scss']
 })
 export class MovieItemComponent implements OnInit {
-
-  @Input() itemData : Movie = null!
+  firstPartOfPath: string='https://image.tmdb.org/t/p/w342'
+  @Input() itemData : Movie;
   @Input() big:boolean = false
   constructor() {}
 

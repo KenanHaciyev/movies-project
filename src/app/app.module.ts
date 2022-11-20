@@ -13,6 +13,8 @@ import { PromoComponent } from './components/promo/promo.component';
 import { ItemsComponent } from './components/items/items.component';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { MovieInfoComponent } from './pages/movie-info/movie-info.component';
+import { VideoPlayerComponent } from './pages/video-player/video-player.component';
+import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/video-player-trailers.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { MovieInfoComponent } from './pages/movie-info/movie-info.component';
     ItemsComponent,
     MovieItemComponent,
     MovieInfoComponent,
+    VideoPlayerComponent,
+    VideoPlayerTrailersComponent,
   ],
   imports: [
     BrowserModule,

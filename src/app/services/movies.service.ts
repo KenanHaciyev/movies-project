@@ -11,6 +11,14 @@ export class MoviesService {
   ) {
   }
 
+  getSimilarMovies(id: string) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
+  getImages(id: string) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/images?api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
   getData(type: string = 'popular') {
     return this.http.get(`https://api.themoviedb.org/3/movie/${type}?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
@@ -22,4 +30,9 @@ export class MoviesService {
   getMovieDetails(id: string) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
+
+  getMovieTrailer(id: string) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
 }
