@@ -6,6 +6,7 @@
     <app-header></app-header>
 
   <div class="intro__content">
-    <h2>Welcome</h2>
+    <div class="intro__content-message" >{{message}}</div>
+    <button *ngIf="orderBtn" class="intro__content-btn" >Send request</button>
   </div>
 </div>

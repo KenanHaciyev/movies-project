@@ -34,10 +34,17 @@
       width: 90%;
       height: 3rem;
       border-radius: 6px;
-      background-color: #ab0008;
+      background-color: rgba(171, 0, 8, 0.59);
       border: 1px #ab0008 solid;
       outline: unset;
       font-size: 24px;
+
+      &:hover {
+        transition: all .3s;
+        background-color: #ab0008;
+        border: 1px grey solid;
+
+      }
     }
   }
 
@@ -82,8 +89,9 @@
     justify-content: space-between;
     flex-wrap: wrap;
     width: 300px;
+
     .content-images {
-      img{
+      img {
         margin-bottom: 5px;
         height: 120px;
         width: 200px;
@@ -98,24 +106,103 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
+  padding: 20px;
 
   &-images {
     margin: 0 10px;
-    background-color: rgba(255, 255, 249, 0.61);
-    border-radius: 5px;
 
     img {
-      width: 100px;
-      height: 50px;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: rgba(255, 255, 249, 0.61);
+      width: 130px;
+      height: 65px;
     }
   }
 }
 
-.wrapper{
-  .similar{
+.wrapper {
+  .similar {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+}
+
+.reviews {
+  position: relative;
+  width: 1400px;
+  display: block;
+  margin: auto;
+
+  &-image {
+    width: 1400px;
+    height: 500px;
+    display: block;
+    margin: 0 auto;
+
+    img {
+      display: block;
+      margin: 0 auto;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &-btn {
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    margin: 5px auto auto;
+    width: 150px;
+    height: 3rem;
+    border-radius: 6px;
+    background-color: rgba(171, 0, 8, 0.59);
+    border: 1px #ab0008 solid;
+    font-size: 24px;
+    outline: unset;
+    z-index: 20;
+
+    &:hover {
+      transition: all .3s;
+      background-color: #ab0008;
+      border: 1px grey solid;
+
+    }
+  }
+
+  &-content {
+    margin-top: 40px;
+
+    &-review {
+      width: 900px;
+      margin-top: 10px;
+      padding: 15px 15px 15px 35px;
+      border: 1px grey solid;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .rate {
+          margin-right: 20px;
+          display: flex;
+          align-items: center;
+
+          .my-icon {
+            color: #ffda02;
+          }
+
+        }
+      }
+
+      .date{
+        text-align: right;
+        font-style: italic;
+        margin-top: 15px;
+      }
+    }
   }
 }

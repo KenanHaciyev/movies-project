@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
+import {ActivatedRoute} from "@angular/router";
 import {Movie} from 'src/app/interfaces';
 import {MoviesService} from "../../services/movies.service";
 import {ViewportScroller} from "@angular/common";
@@ -10,12 +10,17 @@ import {ViewportScroller} from "@angular/common";
   styleUrls: ['./movie-info.component.scss']
 })
 export class MovieInfoComponent implements OnInit {
-  movieInfo: Movie | any;
+  movieInfo: Movie;
   movieTrailers: any;
   bySound: boolean = false;
-  firstPartOfPath:string = 'https://image.tmdb.org/t/p/';
+  firstPartOfPath: string = 'https://image.tmdb.org/t/p/';
   imagesArr: any;
   similarMovies: any;
+  movieInfoProductionCompaniesLength = 0;
+  movieReviews:any[];
+  reviews=false;
+  movieReviewsLength:number;
+  playerIsReady:boolean=false;
 
   constructor(
     private route: ActivatedRoute,
@@ -32,6 +37,7 @@ export class MovieInfoComponent implements OnInit {
       })
       this.getImagesOfMovie(result.id)
       this.getSimilarMovies(result.id)
+      this.getMovieReviews(result.id)
     })
   }
 
@@ -40,23 +46,34 @@ export class MovieInfoComponent implements OnInit {
     this.bySound = true
   }
 
+  toTopOnly() {
+    this.viewportScroller.scrollToPosition([0, 0]);
+  }
+
+
   getMovieDataById(id: string) {
-    return this.moviesServ.getMovieDetails(id).subscribe(result => {
+    return this.moviesServ.getMovieDetails(id).subscribe((result: any) => {
       this.movieInfo = result
+      this.movieInfoProductionCompaniesLength = result.production_companies.length;
     })
   }
 
   getImagesOfMovie(id: string) {
-    this.moviesServ.getImages(id).subscribe((result:any)=> {
-      this.imagesArr=result.backdrops.slice(0,5);
+    this.moviesServ.getImages(id).subscribe((result: any) => {
+      this.imagesArr = result.backdrops.slice(0, 5);
     })
   }
 
   getSimilarMovies(id: string) {
-    this.moviesServ.getSimilarMovies(id).subscribe((result:any) => {
-      this.similarMovies = result.results.slice(0,7)
-      console.log(this.similarMovies)
+    this.moviesServ.getSimilarMovies(id).subscribe((result: any) => {
+      this.similarMovies = result.results.slice(0, 7)
     })
   }
 
+  getMovieReviews(id: string) {
+    this.moviesServ.getReviews(id).subscribe((res:any)=> {
+      this.movieReviews = res.results;
+      this.movieReviewsLength = res.results?.length
+    })
+  }
 }

@@ -52,6 +52,37 @@
 
   &__content {
     z-index: 10;
+    &-message{
+      font-size: 30px;
+      position: absolute;
+      left: 5%;
+      top: 30%;
+      width: 280px;
+    }
+
+    &-btn{
+      position: absolute;
+      left: 7%;
+      top: 44%;
+      height: 3rem;
+      border-radius: 6px;
+      background-color: rgba(171, 0, 8, 0.59);
+      border: 1px #ab0008 solid;
+      font-size: 24px;
+      outline: unset;
+
+      &:hover {
+        transition: all .3s;
+        background-color: #ab0008;
+        border: 1px grey solid;
+      }
+
+      &:active{
+        border-radius: 100%;
+        color: black;
+        opacity: 0;
+      }
+    }
   }
 }
 

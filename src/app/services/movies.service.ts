@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
+import {Movie} from '../interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -9,6 +10,10 @@ export class MoviesService {
   constructor(
     private http: HttpClient
   ) {
+  }
+
+  getReviews(id: string) {
+    return this.http.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
 
   getSimilarMovies(id: string) {
@@ -28,7 +33,7 @@ export class MoviesService {
   }
 
   getMovieDetails(id: string) {
-    return this.http.get(`https://api.themoviedb.org/3/movie/${id}?api_key=f076dbbfaed7c390f748743c91303bf6`)
+    return this.http.get<Movie>(`https://api.themoviedb.org/3/movie/${id}?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
 
   getMovieTrailer(id: string) {

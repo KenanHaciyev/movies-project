@@ -13,11 +13,25 @@ export interface Movie {
   video: boolean;
   vote_average: number;
   vote_count: number;
+  budget: string;
+  revenue: number;
+  genres: any[];
+  runtime: number;
+  production_companies: any[]
 }
 
 export interface Trailer{
   key: string
 }
+
+// export interface Reviews{
+//   results: Result[]
+// }
+//
+// export interface Result{
+//   author_details: {};
+//   content: string
+// }
 
 
 

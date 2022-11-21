@@ -15,14 +15,18 @@ export class VideoPlayerComponent implements OnInit {
 
   ngOnInit(): void {
     if(this?.trailerKey){
-      this.src = this?.makeSanitizerUrl(
-        `https://www.youtube-nocookie.com/embed/${this?.trailerKey}?autoplay=1&mute=1&start=4
-        &modestbranding=1&controls=0&showinfo=0&loop=1&playlist=${this?.trailerKey}`
-      )
+      this.rightPathBySanitizerUrl()
     }
   }
 
   makeSanitizerUrl(path: string) {
     return this.sanitizer.bypassSecurityTrustResourceUrl(path)
+  }
+
+  rightPathBySanitizerUrl(){
+    this.src = this?.makeSanitizerUrl(
+      `https://www.youtube-nocookie.com/embed/${this?.trailerKey}?autoplay=1&mute=1&start=4
+        &modestbranding=1&controls=0&showinfo=0&loop=1`
+    )
   }
 }
