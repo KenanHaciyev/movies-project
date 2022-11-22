@@ -16,6 +16,10 @@ export class MoviesService {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
 
+  getMovieactors(id: string){
+    return  this.http.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
   getSimilarMovies(id: string) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
@@ -39,5 +43,6 @@ export class MoviesService {
   getMovieTrailer(id: string) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
+
 
 }

@@ -34,7 +34,7 @@ import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/vide
     BrowserModule,
     AppRoutingModule,
     PaginatorModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

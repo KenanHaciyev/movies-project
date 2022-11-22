@@ -9,10 +9,12 @@ import {Movie} from "../../interfaces";
 })
 export class MoviesComponent implements OnInit {
 
+  searchResult=''
+
   allMovies: Movie[] = []
   constructor(
     private moviesServ: MoviesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.getMoviesByPages(1)
@@ -28,4 +30,7 @@ export class MoviesComponent implements OnInit {
     this.getMoviesByPages(event.page + 1)
   }
 
+  searching() {
+    console.log(this.searchResult)
+  }
 }

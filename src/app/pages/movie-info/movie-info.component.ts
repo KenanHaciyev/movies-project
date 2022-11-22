@@ -20,7 +20,7 @@ export class MovieInfoComponent implements OnInit {
   movieReviews:any[];
   reviews=false;
   movieReviewsLength:number;
-  playerIsReady:boolean=false;
+  actorsArr:any;
 
   constructor(
     private route: ActivatedRoute,
@@ -38,6 +38,7 @@ export class MovieInfoComponent implements OnInit {
       this.getImagesOfMovie(result.id)
       this.getSimilarMovies(result.id)
       this.getMovieReviews(result.id)
+      this.getActors(result.id)
     })
   }
 
@@ -75,5 +76,11 @@ export class MovieInfoComponent implements OnInit {
       this.movieReviews = res.results;
       this.movieReviewsLength = res.results?.length
     })
+  }
+
+  getActors(id: string){
+     this.moviesServ.getMovieactors(id).subscribe((res:any) => {
+       this.actorsArr = res.cast.slice(0,8)
+     })
   }
 }

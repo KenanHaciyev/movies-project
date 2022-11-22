@@ -121,6 +121,32 @@
   }
 }
 
+.actors{
+  h2{
+    margin-left: 20px;
+  }
+  &-wrapper{
+      display: flex;
+    justify-content: space-around;
+    &-info{
+      text-align: center;
+      .character{
+        font-style: italic;
+        color: rgba(202,202,202,0.86);
+      }
+
+      .originalName{
+        font-size: 19px;
+      }
+      img{
+        height: 220px;
+        width: 150px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
 .wrapper {
   .similar {
     display: flex;
@@ -153,7 +179,7 @@
   &-btn {
     position: fixed;
     top: 1%;
-    right: 1%;
+    left: 1%;
     margin: 5px auto auto;
     width: 150px;
     height: 3rem;
