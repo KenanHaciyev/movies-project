@@ -6,7 +6,6 @@ import {Movie} from '../interfaces';
   providedIn: 'root'
 })
 export class MoviesService {
-
   constructor(
     private http: HttpClient
   ) {
@@ -16,7 +15,7 @@ export class MoviesService {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/reviews?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
 
-  getMovieactors(id: string){
+  getMovieActors(id: string){
     return  this.http.get(`https://api.themoviedb.org/3/movie/${id}/credits?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
 

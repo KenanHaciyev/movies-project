@@ -1,15 +1,13 @@
-<div class="movie-promo" *ngIf=" movieTrailers?.key || movieInfo?.poster_path;"  >
+<div class="movie-promo" *ngIf=" movieTrailers?.key || movieInfo?.poster_path;">
   <div *ngIf="!reviews" class="wrapper">
     <div class="player" *ngIf="movieTrailers?.key;else poster">
       <app-video-player
         *ngIf="!bySound; else bySoundOn" [trailerKey]="movieTrailers.key">
       </app-video-player>
-
       <ng-template #bySoundOn>
         <app-video-player-trailers [trailerKey]="movieTrailers.key"></app-video-player-trailers>
       </ng-template>
     </div>
-
     <ng-template class="posterInsteadVideo" #poster>
       <ng-container *ngIf="movieInfo?.poster_path">
         <div class="big-post">
@@ -17,68 +15,56 @@
         </div>
       </ng-container>
     </ng-template>
-
     <div *ngIf="movieInfo" class="content">
       <div class="content-poster">
         <div class="content-poster-photo">
           <img [src]="firstPartOfPath+'w342'+movieInfo.poster_path" alt="poster">
-          <button *ngIf="movieTrailers" (click)="toTop()">WATCH TRAILER</button>
-          <button (click)="reviews=!reviews; toTopOnly() " >Reviews</button>
+          <button *ngIf="movieTrailers" (click)="toTop()" >WATCH TRAILER</button>
+          <button (click)="reviews=!reviews; toTopOnly() ">Reviews</button>
         </div>
       </div>
-
       <div class="content-description">
         <h2>{{movieInfo.title}} ({{movieInfo.release_date | date : 'yyyy'}}) </h2>
-
         <div *ngIf="movieInfo.budget" class="content-description-line">
           <div>Budget:</div>
           <div class="toLeft">{{movieInfo.budget |currency }}</div>
         </div>
-
         <div *ngIf="movieInfo.revenue" class="content-description-line">
           <div>Revenue:</div>
           <div class="toLeft">{{movieInfo.revenue |currency }}</div>
         </div>
-
         <div class="content-description-line">
           <div>Genres:</div>
           <div class="toLeft"> {{ movieInfo.genres[0]?.name}}</div>
         </div>
-
         <div class="content-description-line">
           <div>Language:</div>
           <div class="toLeft">{{movieInfo.original_language | titlecase}}</div>
         </div>
-
         <div class="content-description-line">
           <div>Duration:</div>
           <div class="toLeft">{{movieInfo.runtime}} min</div>
         </div>
-
         <div class="content-description-line">
           <div>Release date:</div>
           <div class="toLeft">{{movieInfo.release_date | date : "dd/MM/yyyy"}}</div>
         </div>
-
         <div *ngIf="movieInfo?.vote_average" class="content-description-line">
           <div>Rating:</div>
           <div class="toAlignItems toLeft">
             <span class="my-icon">Star</span> <span>{{movieInfo.vote_average | number : '1.1-2'}}/10</span>
           </div>
         </div>
-
         <div class="overview">
           {{movieInfo.overview}}
         </div>
       </div>
-
       <div class="content-images-wrapper" *ngIf="imagesArr">
         <div class="content-images" *ngFor="let item of imagesArr">
           <img [src]="firstPartOfPath+'w185/'+item.file_path" alt="post">
         </div>
       </div>
     </div>
-
     <ng-container *ngIf="movieInfoProductionCompaniesLength>1">
       <h2 style="text-align: center">Production Companies</h2>
       <div class="companies">
@@ -89,50 +75,45 @@
         </div>
       </div>
     </ng-container>
-
-    <div class="actors" *ngIf="actorsArr" >
+    <div class="actors" *ngIf="actorsArr">
       <h2>Actors</h2>
-        <div class="actors-wrapper" >
-          <div  *ngFor="let actor of actorsArr" >
-            <div class="actors-wrapper-info" *ngIf="actor.profile_path" >
-              <img src="https://image.tmdb.org/t/p/w342{{actor.profile_path}}" alt="">
-              <div class="character" >{{actor.character}}</div>
-              <div class="originalName" >{{actor.name}}</div>
-            </div>
+      <div class="actors-wrapper">
+        <div *ngFor="let actor of actorsArr">
+          <div class="actors-wrapper-info" *ngIf="actor.profile_path">
+            <img src="https://image.tmdb.org/t/p/w342{{actor.profile_path}}" alt="">
+            <div class="character">{{actor.character}}</div>
+            <div class="originalName">{{actor.name}}</div>
           </div>
         </div>
+      </div>
     </div>
-
-    <h2 style="text-align: center">Similar movies</h2>
+    <h2 class="similar-header" >Similar movies</h2>
     <div class="similar">
       <app-items [moviesData]="similarMovies"></app-items>
     </div>
-
   </div>
 
   <div *ngIf="reviews" class="reviews">
     <div class="reviews-image">
       <img [src]="firstPartOfPath +'original'+movieInfo.poster_path" alt="poster">
     </div>
-    <button class="reviews-btn" (click)="reviews=!reviews; bySound=false" >Return back</button>
+    <button class="reviews-btn" (click)="reviews=!reviews; bySound=false">Return back</button>
     <div *ngIf="movieReviewsLength; else empty" class="reviews-content">
-      <div class="reviews-content-review" *ngFor="let person of movieReviews" >
+      <div class="reviews-content-review" *ngFor="let person of movieReviews">
         <div class="reviews-content-review-header">
-        <h2>{{person.author_details.username}}</h2>
+          <h2>{{person.author_details.username}}</h2>
           <div class="rate">
-            <span class="my-icon" >Star</span> <span>{{person.author_details.rating}}/10</span>
+            <span class="my-icon">Star</span> <span>{{person.author_details.rating}}/10</span>
           </div>
         </div>
         <div>{{person.content}}</div>
-        <div class="date" >{{person.created_at | date:'dd/MM/yyyy'}}</div>
+        <div class="date">{{person.created_at | date:'dd/MM/yyyy'}}</div>
       </div>
     </div>
-
-    <ng-template #empty >
-      <h2 style="text-align: center" >Review list is empty :-(</h2>
+    <ng-template #empty>
+      <h2 style="text-align: center">Review list is empty :-(</h2>
     </ng-template>
   </div>
-
 </div>
 
 <ng-template #loading>

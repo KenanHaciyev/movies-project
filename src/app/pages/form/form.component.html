@@ -1,0 +1,49 @@
+<div class="form" (submit)="submit()">
+  <img [src]="'https://image.tmdb.org/t/p/original'+path" alt="">
+
+  <button routerLink="/" class="form-goBack">Return back</button>
+  <form *ngIf="!gratitude;else load" [formGroup]="myForm">
+    <h2 style="text-align: center">Ask us about movies</h2>
+
+    <div class="form-control">
+      <label for="name">Name & Surname</label>
+      <input type="text" id="name" formControlName="name" placeholder="Name & lastname">
+      <div class="form-control-validate" *ngIf="myForm.controls['name'].touched && myForm.controls['name'].invalid">
+        <small *ngIf="myForm.controls['name'].errors?.['required']">Enter your name</small>
+        <small *ngIf="  myForm.controls['name'].errors?.['minlength']">Name & Surname must be at
+          least {{myForm.get('name')?.errors?.['minlength']?.requiredLength}} characters
+          current length is {{myForm.controls['name'].errors?.['minlength']?.actualLength}}
+        </small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" placeholder="Email">
+      <div class="form-control-validate" *ngIf="myForm.controls['email'].touched && myForm.controls['email'].invalid">
+        <small *ngIf="myForm.controls['email'].errors?.['required']">Enter your email-address</small>
+        <small *ngIf="myForm.controls['email'].errors?.['email']">Enter correct email</small>
+      </div>
+    </div>
+
+    <div class="form-control">
+      <label for="name">Your request</label>
+      <textarea type="text" id="text" formControlName="text"
+                placeholder="I want see in your site the movie by name ...">
+      </textarea>
+      <div class="form-control-validate" *ngIf="myForm.controls['text'].touched && myForm.controls['text'].invalid">
+        <small *ngIf="myForm.controls['text'].invalid">Enter your request</small>
+      </div>
+    </div>
+
+    <button class="form-submit" type="submit" [disabled]="myForm.invalid || submitted">Send</button>
+  </form>
+
+  <ng-template #load>
+    <div class="gratitude">
+      <h2 class="gratitude-thanks">Thanks, we will make anything</h2>
+      <h3 class="gratitude-load">{{loading}}</h3>
+    </div>
+  </ng-template>
+
+</div>

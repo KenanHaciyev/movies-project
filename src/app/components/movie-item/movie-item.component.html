@@ -1,7 +1,8 @@
 <a class="movie-item" *ngIf="itemData?.poster_path" [class.bigPostsForMovies]="big" [routerLink]="'/movieInfo/' + itemData.id" >
   <div class="movie-item-rating">
     <div class="my-icon">Star</div>
-    <span>{{itemData.vote_average === 0? 6.8 : itemData.vote_average | number:'1.1-1'}}</span><span>/10</span>
+    <span>{{itemData.vote_average === 0? 6.8 : itemData.vote_average | number:'1.1-1'}}</span>
+    <span>/10</span>
   </div>
   <div class="movie-item-image" >
     <img  src="{{firstPartOfPath+itemData.poster_path}}" alt="#">

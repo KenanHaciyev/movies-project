@@ -79,7 +79,7 @@ export class MovieInfoComponent implements OnInit {
   }
 
   getActors(id: string){
-     this.moviesServ.getMovieactors(id).subscribe((res:any) => {
+     this.moviesServ.getMovieActors(id).subscribe((res:any) => {
        this.actorsArr = res.cast.slice(0,8)
      })
   }

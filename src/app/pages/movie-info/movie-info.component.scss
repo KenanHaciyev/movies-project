@@ -121,24 +121,29 @@
   }
 }
 
-.actors{
-  h2{
+.actors {
+  h2 {
     margin-left: 20px;
   }
-  &-wrapper{
-      display: flex;
-    justify-content: space-around;
-    &-info{
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+
+    &-info {
+      margin: 0 18px;
       text-align: center;
-      .character{
+
+      .character {
         font-style: italic;
-        color: rgba(202,202,202,0.86);
+        color: rgba(202, 202, 202, 0.86);
       }
 
-      .originalName{
+      .originalName {
         font-size: 19px;
       }
-      img{
+
+      img {
         height: 220px;
         width: 150px;
         object-fit: cover;
@@ -148,6 +153,9 @@
 }
 
 .wrapper {
+  .similar-header{
+    margin: 10px auto 0 20px;
+  }
   .similar {
     display: flex;
     flex-wrap: wrap;
@@ -224,7 +232,7 @@
         }
       }
 
-      .date{
+      .date {
         text-align: right;
         font-style: italic;
         margin-top: 15px;

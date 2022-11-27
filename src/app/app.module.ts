@@ -15,6 +15,9 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
 import { MovieInfoComponent } from './pages/movie-info/movie-info.component';
 import { VideoPlayerComponent } from './pages/video-player/video-player.component';
 import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/video-player-trailers.component';
+import { SearchPipe } from './shared/search.pipe';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormComponent } from './pages/form/form.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +32,16 @@ import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/vide
     MovieInfoComponent,
     VideoPlayerComponent,
     VideoPlayerTrailersComponent,
+    SearchPipe,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PaginatorModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
