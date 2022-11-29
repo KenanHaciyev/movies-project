@@ -1,7 +1,7 @@
 <div class="form" (submit)="submit()">
-  <img [src]="'https://image.tmdb.org/t/p/original'+path" alt="">
+  <img *ngIf="path" [src]="'https://image.tmdb.org/t/p/original'+path" alt="">
 
-  <button routerLink="/" class="form-goBack">Return back</button>
+  <button routerLink="/" class="form-goBack"><< back</button>
   <form *ngIf="!gratitude;else load" [formGroup]="myForm">
     <h2 style="text-align: center">Ask us about movies</h2>
 
@@ -41,9 +41,15 @@
 
   <ng-template #load>
     <div class="gratitude">
-      <h2 class="gratitude-thanks">Thanks, we will make anything</h2>
+      <h2 class="gratitude-thanks">Your request has been accepted:)</h2>
       <h3 class="gratitude-load">{{loading}}</h3>
     </div>
   </ng-template>
 
+  <div class="form-contacts" >
+    <h2>Our number</h2>
+    <h3>(+994) 55-559-91-55</h3>
+    <h2>Our email-address</h2>
+    <h3>anyEmail@mail.ru</h3>
+  </div>
 </div>

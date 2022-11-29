@@ -18,5 +18,4 @@ export class MovieItemComponent implements OnInit {
   ngOnInit(): void {
     this.viewPortScroller.scrollToPosition([0, 0])
   }
-
 }

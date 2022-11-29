@@ -1,0 +1,33 @@
+<div class="dashboard">
+  <button class="dashboard-back" routerLink="/"><< Menu</button>
+  <div class="wrap" *ngIf="requests$?.length; else empty">
+    <h2>Requests</h2>
+    <table>
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Name & Surname</td>
+        <td>Email</td>
+        <td>Request text</td>
+        <td>Removing</td>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let request of requests$; let i = index">
+        <td>{{i + 1}}</td>
+        <td>{{request.info.name}}</td>
+        <td>{{request.info.email}}</td>
+        <td>{{request.info.text}}</td>
+        <td>
+          <button (click)="removing(request.id)">Delete</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #empty>
+    <h2>Requests list is empty :(</h2>
+  </ng-template>
+</div>

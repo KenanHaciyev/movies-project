@@ -1,13 +1,12 @@
 <header>
   <div class="navbar">
-    <a routerLink="/main" class="navbar-logo">
-      <img src="./assets/images/logo.png" alt="#">
+    <a routerLink="/" class="navbar-logo">
+      <img src="./assets/images/logo.png" alt="logo">
     </a>
     <ul class="navbar-links">
-      <li><a routerLink="/main">Home</a></li>
-      <li><a routerLink="/movies">Movies</a></li>
-      <li><a routerLink="/contact">Contact us</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
+      <li><a routerLink="/movies" routerLinkActive="active" >Movies</a></li>
+      <li><a routerLink="/form" routerLinkActive="active" >Contact us</a></li>
     </ul>
   </div>
-
 </header>

@@ -1,10 +1,12 @@
-<div class="movie-promo" *ngIf=" movieTrailers?.key || movieInfo?.poster_path;">
+<!--from div movie-promo   *ngIf=" movieTrailers?.key || movieInfo?.poster_path;"  -->
+<div class="movie-promo">
   <div *ngIf="!reviews" class="wrapper">
+    <button class="wrapper-back" routerLink="/movies" ><< back</button>
     <div class="player" *ngIf="movieTrailers?.key;else poster">
       <app-video-player
-        *ngIf="!bySound; else bySoundOn" [trailerKey]="movieTrailers.key">
+        *ngIf="!bySound; else soundOn" [trailerKey]="movieTrailers.key">
       </app-video-player>
-      <ng-template #bySoundOn>
+      <ng-template #soundOn>
         <app-video-player-trailers [trailerKey]="movieTrailers.key"></app-video-player-trailers>
       </ng-template>
     </div>
@@ -75,7 +77,7 @@
         </div>
       </div>
     </ng-container>
-    <div class="actors" *ngIf="actorsArr">
+    <div class="actors" *ngIf="actorsArr?.length>2">
       <h2>Actors</h2>
       <div class="actors-wrapper">
         <div *ngFor="let actor of actorsArr">
@@ -97,7 +99,7 @@
     <div class="reviews-image">
       <img [src]="firstPartOfPath +'original'+movieInfo.poster_path" alt="poster">
     </div>
-    <button class="reviews-btn" (click)="reviews=!reviews; bySound=false">Return back</button>
+    <button class="reviews-btn" (click)="reviews=!reviews; bySound=false"> << back</button>
     <div *ngIf="movieReviewsLength; else empty" class="reviews-content">
       <div class="reviews-content-review" *ngFor="let person of movieReviews">
         <div class="reviews-content-review-header">

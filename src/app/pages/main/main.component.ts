@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 
 @Component({
@@ -14,21 +14,19 @@ export class MainComponent implements OnInit {
 
   constructor(
     private moviesServ: MoviesService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-    this.moviesServ.getData().subscribe((res:any) => {
-        this.popularMovies = res.results
+    this.moviesServ.getData().subscribe((res: any) => {
+      this.popularMovies = res.results
     })
 
-    this.moviesServ.getData("top_rated").subscribe((res:any) => {
+    this.moviesServ.getData("top_rated").subscribe((res: any) => {
       this.topRatedMovies = res.results
     })
 
-    this.moviesServ.getData("upcoming").subscribe((res:any) => {
+    this.moviesServ.getData("upcoming").subscribe((res: any) => {
       this.upcomingMovies = res.results
     })
   }
-
-
 }

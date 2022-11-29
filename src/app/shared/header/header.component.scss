@@ -13,6 +13,7 @@ header {
       justify-content: space-around;
       list-style: none;
       text-decoration: none;
+      width: 290px;
       li{
         margin: 0 8px;
         display: flex;
@@ -34,6 +35,5 @@ header {
 }
 
 .active {
-  color: red;
-  font-size: 30px;
+  text-transform: uppercase;
 }

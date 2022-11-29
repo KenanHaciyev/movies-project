@@ -9,6 +9,35 @@
       object-fit: cover;
     }
   }
+  min-height: 1000px;
+
+  .wrapper{
+    position: relative;
+    &-back{
+      position: absolute;
+      left: 10px;
+      display: block;
+      margin: 5px auto auto;
+      width: 120px;
+      height: 2.2rem;
+      border-radius: 5px;
+      background-color: rgba(171, 0, 8, 0.59);
+      border: 1px #ab0008 solid;
+      outline: unset;
+      font-size: 24px;
+      z-index: 20;
+
+      &:hover {
+        transition: all .3s;
+        background-color: #ab0008;
+        border: 1px grey solid;
+      }
+    }
+
+    .player{
+      min-height:550px;
+    }
+  }
 }
 
 .content {
@@ -43,7 +72,6 @@
         transition: all .3s;
         background-color: #ab0008;
         border: 1px grey solid;
-
       }
     }
   }
@@ -189,8 +217,8 @@
     top: 1%;
     left: 1%;
     margin: 5px auto auto;
-    width: 150px;
-    height: 3rem;
+    width: 110px;
+    height: 2.5rem;
     border-radius: 6px;
     background-color: rgba(171, 0, 8, 0.59);
     border: 1px #ab0008 solid;

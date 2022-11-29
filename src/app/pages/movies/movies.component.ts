@@ -7,16 +7,14 @@ import {Movie} from "../../interfaces";
   templateUrl: './movies.component.html',
   styleUrls: ['./movies.component.scss']
 })
-export class MoviesComponent implements OnInit, OnChanges {
-  pageForBack: number;
+export class MoviesComponent implements OnInit {
   allMovies: Movie[] = []
   searchResult: string;
+  page: string;
+
   constructor(
     private moviesServ: MoviesService
-  ) {}
-
-  ngOnChanges(changes:SimpleChanges): void {
-    console.log('changes' , changes)
+  ) {
   }
 
   ngOnInit(): void {
@@ -31,6 +29,6 @@ export class MoviesComponent implements OnInit, OnChanges {
 
   paginate(event: any) {
     this.getMoviesByPages(event.page + 1)
-    this.pageForBack = event.page + 1
+    this.page = event.page+1
   }
 }

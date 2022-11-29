@@ -38,16 +38,19 @@ export class FormComponent implements OnInit {
   })
 
   submit() {
+    if (this.myForm.invalid) {
+      return
+    }
     this.submitted = true
     this.gratitude = true
     this.loader()
-    const user = {
+    const userRequest = {
       name: this.myForm.value.name,
       email: this.myForm.value.email,
       text: this.myForm.value.text
     }
 
-    this.userServ.sendRequest(user).subscribe(res => {
+    this.userServ.sendRequest(userRequest).subscribe(res => {
       this.myForm.reset()
       setTimeout(() => {
         this.router.navigate(['/'])
