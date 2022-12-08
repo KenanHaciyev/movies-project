@@ -1,7 +1,8 @@
 <!--from div movie-promo   *ngIf=" movieTrailers?.key || movieInfo?.poster_path;"  -->
 <div class="movie-promo">
+  <app-header></app-header>
   <div *ngIf="!reviews" class="wrapper">
-    <button class="wrapper-back" routerLink="/movies" ><< back</button>
+    <button class="wrapper-back" routerLink="/movies"><< Movies</button>
     <div class="player" *ngIf="movieTrailers?.key;else poster">
       <app-video-player
         *ngIf="!bySound; else soundOn" [trailerKey]="movieTrailers.key">
@@ -21,7 +22,7 @@
       <div class="content-poster">
         <div class="content-poster-photo">
           <img [src]="firstPartOfPath+'w342'+movieInfo.poster_path" alt="poster">
-          <button *ngIf="movieTrailers" (click)="toTop()" >WATCH TRAILER</button>
+          <button *ngIf="movieTrailers" (click)="toTop()">WATCH TRAILER</button>
           <button (click)="reviews=!reviews; toTopOnly() ">Reviews</button>
         </div>
       </div>
@@ -78,7 +79,7 @@
       </div>
     </ng-container>
     <div class="actors" *ngIf="actorsArr?.length>2">
-      <h2>Actors</h2>
+      <h2 style="text-align: center">Actors</h2>
       <div class="actors-wrapper">
         <div *ngFor="let actor of actorsArr">
           <div class="actors-wrapper-info" *ngIf="actor.profile_path">
@@ -89,12 +90,11 @@
         </div>
       </div>
     </div>
-    <h2 class="similar-header" >Similar movies</h2>
+    <h2 *ngIf="similarMovies" class="similar-header">Similar movies</h2>
     <div class="similar">
       <app-items [moviesData]="similarMovies"></app-items>
     </div>
   </div>
-
   <div *ngIf="reviews" class="reviews">
     <div class="reviews-image">
       <img [src]="firstPartOfPath +'original'+movieInfo.poster_path" alt="poster">

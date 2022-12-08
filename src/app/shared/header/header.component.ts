@@ -11,9 +11,9 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
 
   }
-
-
-
+  voidPage() {
+    localStorage.removeItem('page')
+  }
 }
 
 

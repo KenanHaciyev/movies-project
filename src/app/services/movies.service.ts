@@ -6,9 +6,29 @@ import {Movie} from '../interfaces';
   providedIn: 'root'
 })
 export class MoviesService {
+  moviesCart:any[]=[]
   constructor(
     private http: HttpClient
   ) {
+    if (this.moviesCart.length===0) {
+      localStorage.clear()
+    }
+  }
+
+  getMoviesBySearch(searchRes:string) {
+    return this.http.get(`https://api.themoviedb.org/3/search/movie?page=1&query=${searchRes}&api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
+  deleteFromCart(movie:Movie ) {
+    this.moviesCart = this.moviesCart.filter(movieInfo => movieInfo.id !== movie.id)
+    if (this.moviesCart.length===0) {
+      localStorage.clear()
+    }
+  }
+
+  addToCart(movie:Movie) {
+    this.moviesCart.push(movie)
+    return this.moviesCart
   }
 
   getReviews(id: string) {
@@ -42,6 +62,4 @@ export class MoviesService {
   getMovieTrailer(id: string) {
     return this.http.get(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=f076dbbfaed7c390f748743c91303bf6`)
   }
-
-
 }

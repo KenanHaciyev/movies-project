@@ -1,12 +1,22 @@
 <header>
   <div class="navbar">
-    <a routerLink="/" class="navbar-logo">
-      <img src="./assets/images/logo.png" alt="logo">
-    </a>
-    <ul class="navbar-links">
-      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
-      <li><a routerLink="/movies" routerLinkActive="active" >Movies</a></li>
-      <li><a routerLink="/form" routerLinkActive="active" >Contact us</a></li>
-    </ul>
+    <div class="navbar-left">
+      <a (click)="voidPage()" routerLink="/" class="navbar-left-logo">
+        <img src="./assets/images/logo.png" alt="logo">
+      </a>
+      <ul class="navbar-left-links">
+        <li><a (click)="voidPage()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
+        <li><a routerLink="/movies" routerLinkActive="active" >Movies</a></li>
+        <li><a (click)="voidPage()" routerLink="/form" routerLinkActive="active" >Contact us</a></li>
+      </ul>
+    </div>
+
+    <div class="navbar-right" >
+      <ul>
+        <li>
+          <a (click)="voidPage()" routerLink="/cart" class="my-icon">Shop</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </header>

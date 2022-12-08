@@ -1,5 +1,6 @@
 
 .movie-promo {
+  min-height: 1000px;
   .big-post {
     img {
       display: block;
@@ -9,7 +10,6 @@
       object-fit: cover;
     }
   }
-  min-height: 1000px;
 
   .wrapper{
     position: relative;
@@ -24,7 +24,7 @@
       background-color: rgba(171, 0, 8, 0.59);
       border: 1px #ab0008 solid;
       outline: unset;
-      font-size: 24px;
+      font-size: 20px;
       z-index: 20;
 
       &:hover {
@@ -182,7 +182,8 @@
 
 .wrapper {
   .similar-header{
-    margin: 10px auto 0 20px;
+    margin: 10px auto 0 0;
+    text-align: center;
   }
   .similar {
     display: flex;

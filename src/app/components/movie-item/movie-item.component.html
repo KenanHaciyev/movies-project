@@ -1,11 +1,20 @@
-<a class="movie-item" *ngIf="itemData?.poster_path" [class.bigPostsForMovies]="big" [routerLink]="'/movieInfo/' + itemData.id" >
-  <div class="movie-item-rating">
-    <div class="my-icon">Star</div>
-    <span>{{itemData.vote_average === 0? 6.8 : itemData.vote_average | number:'1.1-1'}}</span>
-    <span>/10</span>
+<a class="movie-item" *ngIf="itemData?.poster_path" [class.bigPostsForMovies]="big">
+  <div class="content" [routerLink]="'/movieInfo/' + itemData.id">
+    <div class="movie-item-rating">
+      <div class="my-icon">Star</div>
+      <span>{{itemData.vote_average === 0 ? 6.8 : itemData.vote_average | number:'1.0-1'}}</span>
+      <span>/10</span>
+    </div>
+    <div class="movie-item-image">
+      <img src="{{firstPartOfPath+itemData.poster_path}}" alt="#">
+      <div class="movie-item-overview" >{{itemData.overview.length>210? itemData.overview.slice(0,210)+'...' : itemData.overview}}</div>
+    </div>
+    <div [class.bigTitle]="big"
+         class="movie-item-title">{{itemData.title.length > 30 ? itemData.title.slice(0, 30) + '...' : itemData.title}}
+    </div>
   </div>
-  <div class="movie-item-image" >
-    <img  src="{{firstPartOfPath+itemData.poster_path}}" alt="#">
-  </div>
-  <div  [class.bigTitle]="big" class="movie-item-title">{{itemData.title}}</div>
+  <button [class]="added ? 'movie-item-cartBtnGreen': 'movie-item-cartBtn'"
+          (click)=" added? deleteFromCart(itemData) : addToCart(itemData)">
+    {{ added ? 'Added' : 'Watch later' }}
+  </button>
 </a>

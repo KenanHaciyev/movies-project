@@ -4,6 +4,7 @@ import {MainComponent} from "./pages/main/main.component";
 import {MoviesComponent} from "./pages/movies/movies.component";
 import {MovieInfoComponent} from "./pages/movie-info/movie-info.component";
 import {FormComponent} from "./pages/form/form.component";
+import {CartComponent} from "./pages/cart/cart.component";
 
 const routes: Routes = [
   {path: '', component: MainComponent},
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'movies', component: MoviesComponent},
   {path: 'movieInfo/:id', component: MovieInfoComponent},
   {path: 'form', component: FormComponent},
+  {path: 'cart', component: CartComponent},
   {path: '**', redirectTo: ''},
 ];
 

@@ -1,4 +1,4 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MoviesService} from "../../services/movies.service";
 import {Movie} from "../../interfaces";
 
@@ -10,25 +10,34 @@ import {Movie} from "../../interfaces";
 export class MoviesComponent implements OnInit {
   allMovies: Movie[] = []
   searchResult: string;
-  page: string;
-
   constructor(
     private moviesServ: MoviesService
   ) {
   }
 
   ngOnInit(): void {
-    this.getMoviesByPages(1)
+    this.getMoviesByPages(+`${localStorage.getItem('page')}` || 1)
   }
 
   getMoviesByPages(page: number) {
-    this.moviesServ.getDataByPage(page).subscribe((res:any) => {
+    this.moviesServ.getDataByPage(page).subscribe((res: any) => {
       this.allMovies = res.results
     })
   }
 
-  paginate(event: any) {
-    this.getMoviesByPages(event.page + 1)
-    this.page = event.page+1
+  paginate(page: number ) {
+    this.getMoviesByPages(page + 1)
+    localStorage.removeItem('page')
+    localStorage.setItem('page', `${page + 1}`)
+  }
+
+  onSearching() {
+    if (this.searchResult) {
+      this.moviesServ.getMoviesBySearch(this.searchResult).subscribe((res: any) => {
+        this.allMovies = res.results
+      })
+    }else {
+      this.getMoviesByPages(+`${localStorage.getItem('page')}` || 1)
+    }
   }
 }

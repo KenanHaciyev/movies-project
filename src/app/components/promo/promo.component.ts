@@ -7,7 +7,7 @@ import {Component, OnInit} from '@angular/core';
 })
 export class PromoComponent implements OnInit {
   movieId = Math.floor(Math.random() * 5)
-  helpWithSearch = ['C', 'a', 'n', 't', ' ', 'f', 'i', 'n', 'd', ' ', 'a', 'n', 'y', ' ', 'm', 'o', 'v', 'i', 'e', '?', ' ', 'I', 'n', 'f', 'o', 'r', 'm', ' ', 'u', 's']
+  helpWithSearch :any= "Couldn't find any movie? Inform Us"
   message = '';
   orderBtn = false;
   time: string = new Date().toLocaleTimeString()
@@ -24,6 +24,7 @@ export class PromoComponent implements OnInit {
 
   typing() {
     let i = 0
+    this.helpWithSearch = this.helpWithSearch.split('')
     const join = setInterval(() => {
       this.message += this.helpWithSearch[i]
       i++

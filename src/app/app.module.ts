@@ -18,6 +18,7 @@ import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/vide
 import { SearchPipe } from './shared/search.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormComponent } from './pages/form/form.component';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { FormComponent } from './pages/form/form.component';
     VideoPlayerTrailersComponent,
     SearchPipe,
     FormComponent,
+    CartComponent,
   ],
   imports: [
     BrowserModule,
