@@ -6,5 +6,5 @@
       <app-movie-item [big]="true" [itemData]="movie"></app-movie-item>
     </div>
   </div>
-  <p-paginator [rows]="20" [totalRecords]="10000" [pageLinkSize]="8" (onPageChange)="paginate($event.page)" ></p-paginator>
+  <p-paginator *ngIf="allMovies" [rows]="20" [totalRecords]="10000" [pageLinkSize]="8" (onPageChange)="paginate($event.page)" ></p-paginator>
 </div>

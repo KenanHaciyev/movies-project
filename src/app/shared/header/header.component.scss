@@ -1,5 +1,6 @@
 header {
   padding: 0 10px;
+
   .navbar {
     display: flex;
     justify-content: space-between;
@@ -8,8 +9,10 @@ header {
     background-color: rgba(39, 36, 36, 0.2);
     padding: 3px 10px;
     border-bottom: 1px rgba(64, 61, 61, 0.95) solid;
-    &-left{
-    display: flex;
+
+    &-left {
+      display: flex;
+
       &-links {
         display: flex;
         justify-content: space-around;
@@ -22,10 +25,7 @@ header {
           display: flex;
           align-items: center;
           font-size: 17px;
-
-          a {
-            color: rgba(194, 210, 255, 0.95);
-          }
+          color: rgba(194, 210, 255, 0.95);
         }
       }
 
@@ -37,20 +37,22 @@ header {
       }
     }
 
-    &-right{
-      li{
+    &-right {
+      li {
         list-style-type: none;
-        a{
+        color: rgba(194, 210, 255, 0.95);
+
+        a {
           font-size: 50px;
-          color: rgba(194, 210, 255, 0.95);
           cursor: pointer;
         }
       }
-
     }
   }
 }
 
 .active {
-  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
 }
+

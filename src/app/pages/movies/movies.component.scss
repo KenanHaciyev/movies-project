@@ -1,5 +1,7 @@
 .movies {
-  padding: 10px;
+  padding: 10px 10px 55px ;
+  min-height: 1000px;
+  position: relative;
 
   &-wrapper {
     display: flex;
@@ -10,9 +12,16 @@
       margin: 4px 10px;
     }
   }
+
+  p-paginator{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 3px;
+  }
 }
 .input{
-  margin: 10px 0 0 20px;
+  margin: 10px 0 5px 20px;
   height: 1.7rem;
   border-radius: 20px;
   padding: 3px 10px;
@@ -29,3 +38,4 @@
   scale: 1.3;
   padding: 5px 20px;
 }
+

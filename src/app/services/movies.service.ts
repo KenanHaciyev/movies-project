@@ -15,6 +15,10 @@ export class MoviesService {
     }
   }
 
+  getActorInfo(personId: string) {
+    return this.http.get(`https://api.themoviedb.org/3/person/${personId}?api_key=f076dbbfaed7c390f748743c91303bf6`)
+  }
+
   getMoviesBySearch(searchRes:string) {
     return this.http.get(`https://api.themoviedb.org/3/search/movie?page=1&query=${searchRes}&api_key=f076dbbfaed7c390f748743c91303bf6`)
   }

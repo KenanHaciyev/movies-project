@@ -17,11 +17,11 @@ export class MovieInfoComponent implements OnInit {
   imagesArr: any;
   similarMovies: any;
   movieInfoProductionCompaniesLength = 0;
-  movieReviews:any[];
-  reviews=false;
-  movieReviewsLength:number;
-  actorsArr:any;
-
+  movieReviews: any[];
+  reviews: boolean = false;
+  movieReviewsLength: number;
+  actorsArr: any;
+  movieId:string;
   constructor(
     private route: ActivatedRoute,
     private moviesServ: MoviesService,
@@ -31,6 +31,7 @@ export class MovieInfoComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((result: any) => {
+      this.movieId = result.id
       this.getMovieDataById(result.id)
       this.moviesServ.getMovieTrailer(result.id).subscribe((res: any) => {
         this.movieTrailers = res.results[0]
@@ -41,6 +42,8 @@ export class MovieInfoComponent implements OnInit {
       this.getActors(result.id)
     })
   }
+
+
 
   toTop() {
     this.viewportScroller.scrollToPosition([0, 0]);
@@ -72,15 +75,15 @@ export class MovieInfoComponent implements OnInit {
   }
 
   getMovieReviews(id: string) {
-    this.moviesServ.getReviews(id).subscribe((res:any)=> {
+    this.moviesServ.getReviews(id).subscribe((res: any) => {
       this.movieReviews = res.results;
       this.movieReviewsLength = res.results?.length
     })
   }
 
-  getActors(id: string){
-     this.moviesServ.getMovieActors(id).subscribe((res:any) => {
-       this.actorsArr = res.cast.slice(0,8)
-     })
+  getActors(id: string) {
+    this.moviesServ.getMovieActors(id).subscribe((res: any) => {
+      this.actorsArr = res.cast.slice(0, 8)
+    })
   }
 }

@@ -19,6 +19,7 @@ import { SearchPipe } from './shared/search.pipe';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { FormComponent } from './pages/form/form.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { ActorInfoComponent } from './pages/actor-info/actor-info.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { CartComponent } from './pages/cart/cart.component';
     SearchPipe,
     FormComponent,
     CartComponent,
+    ActorInfoComponent,
   ],
   imports: [
     BrowserModule,

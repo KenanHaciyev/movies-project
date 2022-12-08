@@ -1,0 +1,40 @@
+<div *ngIf="actorInfo" class="actor">
+  <button [routerLink]="['/movieInfo',movieId]" ><< back</button>
+  <h2 style="text-align: center;">{{actorInfo.name}}</h2>
+  <div class="actor-header">
+    <div class="actor-header-img leftSide">
+      <img [src]="'https://image.tmdb.org/t/p/w342'+ actorInfo.profile_path" alt="profile photo">
+    </div>
+
+    <div class="actor-header rightSide">
+      <div class="actor-header-birthday">Birthday: <span>{{ actorInfo.birthday}}</span></div>
+      <div class="actor-header-gender">Gender: <span>{{actorInfo.gender === 1 ? 'Female' : 'Male'}}</span></div>
+      <div *ngIf="actorInfo.place_of_birth" class="actor-header-placeBirthday">Place of birthday:
+        <span>{{actorInfo.place_of_birth}}</span></div>
+      <div *ngIf="actorInfo.homepage" class="actor-header-homePage">Homepage:
+        <span>
+          <a target="_blank" [href]="actorInfo.homepage">
+          {{actorInfo.homepage}}
+        </a>
+        </span>
+      </div>
+      <div *ngIf="actorInfo.popularity" class="actor-header-popularity">Rating of popularity:
+        <span>
+        <span class="my-icon">Star</span>
+          {{actorInfo.popularity | number:'1.0-1'}}/100
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="actorNames.length>0" class="actor-names">
+    <div class="actor-names-arr">
+      <h3>Also known As:</h3>
+      <div *ngFor="let name of actorNames"><span>{{name}}</span></div>
+    </div>
+  </div>
+
+  <div *ngIf="actorInfo.biography" class="actor-overview">
+    <h3>Biography:</h3>
+    <span>{{actorInfo.biography}}</span></div>
+</div>
