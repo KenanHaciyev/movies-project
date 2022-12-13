@@ -1,13 +1,12 @@
 header {
-  padding: 0 10px;
-
+  width: 100%;
   .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
     background-color: rgba(39, 36, 36, 0.2);
-    padding: 3px 10px;
+    padding: 3px 20px;
     border-bottom: 1px rgba(64, 61, 61, 0.95) solid;
 
     &-left {
