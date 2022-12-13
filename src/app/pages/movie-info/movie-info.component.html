@@ -67,7 +67,7 @@
         </div>
       </div>
     </div>
-    <ng-container *ngIf="movieInfoProductionCompaniesLength>1">
+    <ng-container *ngIf="movieInfoProductionCompaniesLength>2">
       <h2 style="text-align: center">Production Companies</h2>
       <div class="companies">
         <div class="companies-images" *ngFor="let company of movieInfo.production_companies">
@@ -80,14 +80,16 @@
     <div class="actors" *ngIf="actorsArr?.length>2">
       <h2 style="text-align: center">Actors</h2>
       <div class="actors-wrapper">
-        <div *ngFor="let actor of actorsArr">
-          <a [routerLink]="['/movieInfo', movieId, 'actorInfo', actor.id ]">
-            <div class="actors-wrapper-info" *ngIf="actor.profile_path">
-              <img src="https://image.tmdb.org/t/p/w342{{actor.profile_path}}" alt="">
-              <div class="character">{{actor.character}}</div>
-              <div class="originalName">{{actor.name}}</div>
-            </div>
-          </a>
+        <div class="actors-actor" *ngFor="let actor of actorsArr">
+          <div class="actors-actor-forHover" >
+            <a [routerLink]="['/movieInfo', movieId, 'actorInfo', actor.id ]">
+              <div class="actors-wrapper-info" *ngIf="actor.profile_path">
+                <img src="https://image.tmdb.org/t/p/w342{{actor.profile_path}}" alt="">
+                <div class="character">{{actor.character}}</div>
+                <div class="originalName">{{actor.name}}</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -118,7 +120,3 @@
     </ng-template>
   </div>
 </div>
-
-<ng-template #loading>
-  <h2>Loading...</h2>
-</ng-template>

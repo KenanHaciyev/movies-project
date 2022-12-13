@@ -18,8 +18,8 @@ export class MovieInfoComponent implements OnInit {
   similarMovies: any;
   movieInfoProductionCompaniesLength = 0;
   movieReviews: any[];
-  reviews: boolean = false;
   movieReviewsLength: number;
+  reviews: boolean = false;
   actorsArr: any;
   movieId:string;
   constructor(
@@ -43,8 +43,6 @@ export class MovieInfoComponent implements OnInit {
     })
   }
 
-
-
   toTop() {
     this.viewportScroller.scrollToPosition([0, 0]);
     this.bySound = true
@@ -53,7 +51,6 @@ export class MovieInfoComponent implements OnInit {
   toTopOnly() {
     this.viewportScroller.scrollToPosition([0, 0]);
   }
-
 
   getMovieDataById(id: string) {
     return this.moviesServ.getMovieDetails(id).subscribe((result: any) => {

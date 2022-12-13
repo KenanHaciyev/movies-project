@@ -35,7 +35,10 @@
     }
 
     .player{
-      min-height:550px;
+      min-height: 550px;
+      app-video-player {
+        height: 100%;
+      }
     }
   }
 }
@@ -152,6 +155,63 @@
 .actors {
   h2 {
     margin-left: 20px;
+  }
+
+  &-actor{
+    position: relative;
+    &:after{
+      position: absolute;
+      bottom: 0;
+      height: 1px;
+      width: 0;
+      content: '';
+      background-color: #9b9b99;
+    }
+
+    &:before{
+      position: absolute;
+      top: -3px;
+      height: 1px;
+      width: 0;
+      right: 0;
+      content: '';
+      background-color: #9b9b99;
+    }
+    &:hover{
+      &:after, &:before{
+        transition: all .7s;
+        width: 100%;
+      }
+    }
+
+    &-forHover{
+      position: relative;
+      height: 100%;
+      &::before{
+        position: absolute;
+        top: -3px;
+        height: 0;
+        width: 1px;
+        content: '';
+        background-color: #9b9b99;
+      }
+
+      &::after{
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 0;
+        width: 1px;
+        content: '';
+        background-color: #9b9b99;
+      }
+      &:hover{
+        &:after, &:before{
+          transition: all 1s;
+          height: 101%;
+        }
+      }
+    }
   }
 
   &-wrapper {

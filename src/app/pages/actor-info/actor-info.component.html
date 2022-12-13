@@ -1,4 +1,4 @@
-<div *ngIf="actorInfo" class="actor">
+<div *ngIf="actorInfo; else loading" class="actor">
   <button [routerLink]="['/movieInfo',movieId]" ><< back</button>
   <h2 style="text-align: center;">{{actorInfo.name}}</h2>
   <div class="actor-header">
@@ -38,3 +38,7 @@
     <h3>Biography:</h3>
     <span>{{actorInfo.biography}}</span></div>
 </div>
+
+<ng-template #loading>
+  <h2 style="text-align: center">Loading...</h2>
+</ng-template>
