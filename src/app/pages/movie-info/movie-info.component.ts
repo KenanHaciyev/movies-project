@@ -12,7 +12,7 @@ import {ViewportScroller} from "@angular/common";
 export class MovieInfoComponent implements OnInit {
   movieInfo: Movie;
   movieTrailers: any;
-  bySound: boolean = false;
+  bySound: boolean;
   firstPartOfPath: string = 'https://image.tmdb.org/t/p/';
   imagesArr: any;
   similarMovies: any;

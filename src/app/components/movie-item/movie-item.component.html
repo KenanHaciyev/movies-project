@@ -13,7 +13,7 @@
          class="movie-item-title">{{itemData.title.length > 30 ? itemData.title.slice(0, 30) + '...' : itemData.title}}
     </div>
   </div>
-  <button [class]="added ? 'movie-item-cartBtnGreen': 'movie-item-cartBtn'"
+  <button [class]="added ? 'movie-item-cartBtnGreen': 'movie-item-cartBtnRed'"
           (click)=" added? deleteFromCart(itemData) : addToCart(itemData)">
     {{ added ? 'Added' : 'Watch later' }}
   </button>

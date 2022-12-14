@@ -1,6 +1,6 @@
 <div class="movie-promo">
   <app-header></app-header>
-  <div *ngIf="!reviews" class="wrapper">
+  <div *ngIf="!reviews && movieTrailers?.key || !reviews && movieTrailers?.poster;" class="wrapper">
     <button class="wrapper-back" routerLink="/movies"><< Movies</button>
     <div class="player" *ngIf="movieTrailers?.key;else poster">
       <app-video-player
@@ -98,6 +98,11 @@
       <app-items [moviesData]="similarMovies"></app-items>
     </div>
   </div>
+
+<!--  <ng-template #loading >-->
+<!--    <h2 style="text-align: center;" >Loading...</h2>-->
+<!--  </ng-template>-->
+
   <div *ngIf="reviews" class="reviews">
     <div class="reviews-image">
       <img [src]="firstPartOfPath +'original'+movieInfo.poster_path" alt="poster">

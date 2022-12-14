@@ -8,7 +8,7 @@
   &-wrapper {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(39,39,39,0.95);
+    background-color: rgba(39,39,39,0.85);
     z-index: 20;
     &-column {
       border-radius: 4px;
@@ -16,4 +16,3 @@
     }
   }
 }
-

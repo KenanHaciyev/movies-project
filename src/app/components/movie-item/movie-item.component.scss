@@ -6,7 +6,8 @@
   width: 12rem;
   padding: 5px 0 0;
   border: 1px #434040 solid;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
   background-color: rgba(42, 40, 40, 0.55);
   color: rgba(194, 210, 255, 0.95);
   cursor: pointer;
@@ -73,10 +74,10 @@
     align-items: center;
   }
 
-  &-cartBtn {
+  &-cartBtnRed {
     position: absolute;
     display: none;
-    bottom: -25px;
+    bottom: -26px;
     width: 100%;
     height: 1.6rem;
     background-color: rgba(171, 0, 8, 0.59);
@@ -118,7 +119,7 @@
       display: flex;
     }
 
-    .movie-item-cartBtn, .movie-item-cartBtnGreen {
+    .movie-item-cartBtnRed, .movie-item-cartBtnGreen {
       display: block;
     }
 
@@ -131,6 +132,18 @@
 .bigPostsForMovies {
   height: 20rem;
   width: 17rem;
+
+  .movie-item {
+    &-image {
+      height: 99%;
+    }
+
+    &-title{
+      height: 30px;
+    }
+  }
+
+
 }
 
 .bigTitle {

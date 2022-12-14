@@ -16,6 +16,7 @@ export class FormComponent implements OnInit {
   path: string;
   gratitude: boolean = false;
   loading: string = 'Loading';
+  sent:string;
 
   constructor(
     private moviesServ: MoviesService,
@@ -43,6 +44,10 @@ export class FormComponent implements OnInit {
     }
     this.submitted = true
     this.gratitude = true
+    this.sent='For checking admin panel tap on button "Home" and write in url line: ' +
+      '"admin" and tap enter;' +
+      ' login: admin@mail.com, password: 123456'
+    alert(this.sent)
     this.loader()
     const userRequest = {
       name: this.myForm.value.name,
