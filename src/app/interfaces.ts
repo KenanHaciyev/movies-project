@@ -17,29 +17,25 @@ export interface Movie {
   revenue: number;
   genres: any[];
   runtime: number;
-  production_companies: any[]
+  production_companies: any[];
 }
 
-export interface Trailer{
-  key: string
+export interface Trailer {
+  key: string;
 }
 
 export interface ActorInfo {
-  also_known_as?: any[],
-  biography?:string,
-  birthday?: string,
-  deathday?: any,
-  id?: number,
-  imdb_id?: number,
-  known_for_department?: string,
-  gender?: number,
-  homepage?: any,
-  name?: string,
-  place_of_birth?: string,
-  popularity?: string,
-  profile_path?: string
-
+  also_known_as?: any[];
+  biography?: string;
+  birthday?: string;
+  deathday?: any;
+  id?: number;
+  imdb_id?: number;
+  known_for_department?: string;
+  gender?: number;
+  homepage?: any;
+  name?: string;
+  place_of_birth?: string;
+  popularity?: string;
+  profile_path?: string;
 }
-
-
-

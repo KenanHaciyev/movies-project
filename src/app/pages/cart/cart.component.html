@@ -1,27 +1,31 @@
 <app-header></app-header>
-<ng-container *ngIf="itemsData.length;else empty" >
-  <h2 class="header" >Your movie cart</h2>
-  <div  class="cart">
+<ng-container *ngIf="itemsData.length; else empty">
+  <h2 class="header">Your movie cart</h2>
+  <div class="cart">
     <div class="cart-wrapper" *ngFor="let itemData of itemsData">
       <a class="movie-item" *ngIf="itemData?.poster_path">
         <div class="content" [routerLink]="'/movieInfo/' + itemData.id">
           <div class="movie-item-rating">
             <div class="my-icon">Star</div>
-            <span>{{itemData.vote_average === 0 ? 6.8 : itemData.vote_average | number:'1.1-1'}}</span>
+            <span>{{
+              itemData.vote_average === 0 ? 6.8 : (itemData.vote_average | number : '1.1-1')
+            }}</span>
             <span>/10</span>
           </div>
           <div class="movie-item-image">
-            <img src="{{firstPartOfPath+itemData.poster_path}}" alt="#">
+            <img src="{{ firstPartOfPath + itemData.poster_path }}" alt="#" />
           </div>
-          <div class="movie-item-title">{{itemData.title}}</div>
+          <div class="movie-item-title">{{ itemData.title }}</div>
         </div>
-        <button class="movie-item-cartBtn" routerLink="/cart" (click)="removeFromCart(itemData)">Remove</button>
+        <button class="movie-item-cartBtn" routerLink="/cart" (click)="removeFromCart(itemData)">
+          Remove
+        </button>
       </a>
     </div>
   </div>
 </ng-container>
 
-<ng-template #empty >
+<ng-template #empty>
   <h2 class="header">Your movie cart is empty :(</h2>
-  <img src="./assets/images/empty_cart.jpeg" alt="empty">
+  <img src="./assets/images/empty_cart.jpeg" alt="empty" />
 </ng-template>

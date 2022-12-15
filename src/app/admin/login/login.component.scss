@@ -1,5 +1,4 @@
-
-.form{
+.form {
   height: 643px;
   position: relative;
   overflow: hidden;
@@ -12,20 +11,20 @@
     z-index: 2;
     margin: 160px auto auto;
 
-    &::before{
+    &::before {
       position: absolute;
       top: -10px;
       left: -10px;
       bottom: -10px;
       right: -10px;
       content: '';
-      background-color: rgba(0,0,0,0.85);
+      background-color: rgba(0, 0, 0, 0.85);
       z-index: -1;
       border-radius: 7px;
     }
   }
 
-  .form-control{
+  .form-control {
     margin: 0 auto 15px;
     display: block;
     max-width: 100%;
@@ -58,12 +57,12 @@
       border-radius: 7px;
     }
 
-    &-validate{
+    &-validate {
       color: crimson;
     }
   }
 
-  &-media{
+  &-media {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -71,7 +70,7 @@
     height: 100%;
     overflow: hidden;
 
-    video{
+    video {
       top: 44%;
       left: 50%;
       min-width: 100%;

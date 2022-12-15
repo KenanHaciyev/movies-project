@@ -1,4 +1,3 @@
-
 .movie-promo {
   min-height: 740px;
   .big-post {
@@ -11,9 +10,9 @@
     }
   }
 
-  .wrapper{
+  .wrapper {
     position: relative;
-    &-back{
+    &-back {
       position: absolute;
       left: 10px;
       display: block;
@@ -28,13 +27,13 @@
       z-index: 20;
 
       &:hover {
-        transition: all .3s;
+        transition: all 0.3s;
         background-color: #ab0008;
         border: 1px grey solid;
       }
     }
 
-    .player{
+    .player {
       min-height: 550px;
       app-video-player {
         height: 100%;
@@ -71,7 +70,7 @@
       font-size: 24px;
 
       &:hover {
-        transition: all .3s;
+        transition: all 0.3s;
         background-color: #ab0008;
         border: 1px grey solid;
       }
@@ -156,9 +155,9 @@
     margin-left: 20px;
   }
 
-  &-actor{
+  &-actor {
     position: relative;
-    &:after{
+    &:after {
       position: absolute;
       bottom: 0;
       height: 1px;
@@ -167,7 +166,7 @@
       background-color: #9b9b99;
     }
 
-    &:before{
+    &:before {
       position: absolute;
       top: -3px;
       height: 1px;
@@ -176,17 +175,18 @@
       content: '';
       background-color: #9b9b99;
     }
-    &:hover{
-      &:after, &:before{
-        transition: all .7s;
+    &:hover {
+      &:after,
+      &:before {
+        transition: all 0.7s;
         width: 100%;
       }
     }
 
-    &-forHover{
+    &-forHover {
       position: relative;
       height: 100%;
-      &::before{
+      &::before {
         position: absolute;
         top: -3px;
         height: 0;
@@ -195,7 +195,7 @@
         background-color: #9b9b99;
       }
 
-      &::after{
+      &::after {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -204,8 +204,9 @@
         content: '';
         background-color: #9b9b99;
       }
-      &:hover{
-        &:after, &:before{
+      &:hover {
+        &:after,
+        &:before {
           transition: all 1s;
           height: 101%;
         }
@@ -240,7 +241,7 @@
 }
 
 .wrapper {
-  .similar-header{
+  .similar-header {
     margin: 10px auto 0 0;
     text-align: center;
   }
@@ -287,10 +288,9 @@
     z-index: 20;
 
     &:hover {
-      transition: all .3s;
+      transition: all 0.3s;
       background-color: #ab0008;
       border: 1px grey solid;
-
     }
   }
 
@@ -316,7 +316,6 @@
           .my-icon {
             color: #ffda02;
           }
-
         }
       }
 

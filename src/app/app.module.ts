@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from "@angular/common/http";
-import {PaginatorModule} from 'primeng/paginator'
+import { HttpClientModule } from '@angular/common/http';
+import { PaginatorModule } from 'primeng/paginator';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -16,7 +16,7 @@ import { MovieInfoComponent } from './pages/movie-info/movie-info.component';
 import { VideoPlayerComponent } from './pages/video-player/video-player.component';
 import { VideoPlayerTrailersComponent } from './pages/video-player-trailers/video-player-trailers.component';
 import { SearchPipe } from './shared/search.pipe';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './pages/form/form.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ActorInfoComponent } from './pages/actor-info/actor-info.component';
@@ -48,6 +48,6 @@ import { ActorInfoComponent } from './pages/actor-info/actor-info.component';
     ReactiveFormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

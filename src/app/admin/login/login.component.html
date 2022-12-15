@@ -1,7 +1,6 @@
 <div class="form" (submit)="submit()">
-
   <div class="form-media">
-    <video src="./assets/videos/Hacked.mp4" autoplay [muted] = "'muted'" loop playsinline ></video>
+    <video src="./assets/videos/Hacked.mp4" autoplay [muted]="'muted'" loop playsinline></video>
   </div>
 
   <form [formGroup]="myForm">
@@ -9,27 +8,36 @@
 
     <div class="form-control">
       <label for="email">Email</label>
-      <input type="text" id="email" formControlName="email" placeholder="Email">
-      <div class="form-control-validate" *ngIf="myForm.controls['email'].touched && myForm.controls['email'].invalid">
-        <small *ngIf="myForm.controls['email'].errors?.['required']">Enter your email-address</small>
+      <input type="text" id="email" formControlName="email" placeholder="Email" />
+      <div
+        class="form-control-validate"
+        *ngIf="myForm.controls['email'].touched && myForm.controls['email'].invalid"
+      >
+        <small *ngIf="myForm.controls['email'].errors?.['required']"
+          >Enter your email-address</small
+        >
         <small *ngIf="myForm.controls['email'].errors?.['email']">Enter correct email</small>
       </div>
     </div>
 
     <div class="form-control">
       <label for="password">Password</label>
-      <input type="text" id="password" formControlName="password" placeholder="Password">
-      <div class="form-control-validate" *ngIf="myForm.controls['password'].touched && myForm.controls['password'].invalid">
+      <input type="text" id="password" formControlName="password" placeholder="Password" />
+      <div
+        class="form-control-validate"
+        *ngIf="myForm.controls['password'].touched && myForm.controls['password'].invalid"
+      >
         <small *ngIf="myForm.controls['password'].errors?.['required']">Enter your password</small>
-        <small *ngIf="  myForm.controls['password'].errors?.['minlength']">password must be at
-          least {{myForm.get('password')?.errors?.['minlength']?.requiredLength}} characters,
-          current length is {{myForm.controls['password'].errors?.['minlength']?.actualLength}}
+        <small *ngIf="  myForm.controls['password'].errors?.['minlength']"
+          >password must be at least
+          {{myForm.get('password')?.errors?.['minlength']?.requiredLength}} characters, current
+          length is {{myForm.controls['password'].errors?.['minlength']?.actualLength}}
         </small>
       </div>
     </div>
 
-    <button class="form-submit button " type="submit" [disabled]="myForm.invalid || submitted">Send</button>
+    <button class="form-submit button" type="submit" [disabled]="myForm.invalid || submitted">
+      Send
+    </button>
   </form>
-
 </div>
-

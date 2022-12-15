@@ -1,20 +1,30 @@
 <header>
   <div class="navbar">
     <div class="navbar-left">
-      <a (click)="voidPage()" routerLink="/" class="navbar-left-logo">
-        <img src="./assets/images/logo.png" alt="logo">
+      <a class="navbar-left-logo" (click)="voidPage()" routerLink="/">
+        <img src="./assets/images/logo.png" alt="logo" />
       </a>
       <ul class="navbar-left-links">
-        <li><a (click)="voidPage()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
-        <li><a routerLink="/movies" routerLinkActive="active" >Movies</a></li>
-        <li><a (click)="voidPage()" routerLink="/form" routerLinkActive="active" >Contact us</a></li>
+        <li>
+          <a
+            (click)="voidPage()"
+            routerLink="/"
+            routerLinkActive="active"
+            [routerLinkActiveOptions]="{ exact: true }"
+            >Home</a
+          >
+        </li>
+        <li><a routerLink="/movies" routerLinkActive="active">Movies</a></li>
+        <li><a (click)="voidPage()" routerLink="/form" routerLinkActive="active">Contact us</a></li>
       </ul>
     </div>
 
-    <div class="navbar-right" >
+    <div class="navbar-right">
       <ul>
         <li>
-          <a (click)="voidPage()" routerLink="/cart" routerLinkActive="active" class="my-icon">Shop</a>
+          <a class="my-icon" (click)="voidPage()" routerLink="/cart" routerLinkActive="active"
+            >Shop</a
+          >
         </li>
       </ul>
     </div>

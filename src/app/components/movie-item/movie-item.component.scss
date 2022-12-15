@@ -1,4 +1,3 @@
-
 .movie-item {
   display: block;
   position: relative;
@@ -86,7 +85,7 @@
     outline: unset;
 
     &:hover {
-      transition: all .3s;
+      transition: all 0.3s;
       background-color: #ab0008;
       border: 1px grey solid;
     }
@@ -104,14 +103,14 @@
     background-color: rgba(10, 208, 0, 0.62);
 
     &:hover {
-      transition: all .3s;
+      transition: all 0.3s;
       background-color: rgba(10, 208, 0);
       border: 1px grey solid;
     }
   }
 
   &:hover {
-    transition: all .5s;
+    transition: all 0.5s;
     scale: 1.05;
     z-index: 20;
 
@@ -119,7 +118,8 @@
       display: flex;
     }
 
-    .movie-item-cartBtnRed, .movie-item-cartBtnGreen {
+    .movie-item-cartBtnRed,
+    .movie-item-cartBtnGreen {
       display: block;
     }
 
@@ -138,12 +138,10 @@
       height: 99%;
     }
 
-    &-title{
+    &-title {
       height: 30px;
     }
   }
-
-
 }
 
 .bigTitle {
@@ -151,4 +149,3 @@
   display: flex;
   align-items: center;
 }
-
